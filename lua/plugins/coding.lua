@@ -49,6 +49,8 @@ return {
                     { name = "path" },
                 }, {
                     { name = "buffer" },
+                }, {
+                    { name = "copilot" },
                 }),
                 formatting = {
                     format = function(entry, item)
