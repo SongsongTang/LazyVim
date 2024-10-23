@@ -1,0 +1,20 @@
+{
+  "name": "custom-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "tex"
+        ],
+        "path": "./latex/tex-snippets.json"
+      },
+      {
+        "language": [
+          "verilog"
+        ],
+        "path": "./verilog/verilog-snippets.json"
+      }
+
+    ]
+  }
+}

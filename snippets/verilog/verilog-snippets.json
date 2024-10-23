@@ -1,0 +1,252 @@
+{
+    "QG_TEMPLATE": {
+        "prefix": "qg",
+        "body": [
+            "/* ********************************  function  ******************************** */",
+            "$1",
+            "/* ********************************  parameter ******************************** */",
+            "$2",
+            "/* ********************************    port    ******************************** */",
+            "$3",
+            "/* ********************************   mechine  ******************************** */",
+            "$4",
+            "/* ********************************    reg     ******************************** */",
+            "$5",
+            "/* ********************************    wire    ******************************** */",
+            "$6",
+            "/* ********************************  component ******************************** */",
+            "$7",
+            "/* ********************************   assign   ******************************** */",
+            "$8",
+            "/* ********************************   always   ******************************** */",
+            "$9",
+            "$0"
+        ],
+        "description": "Qi Ge TEMPLATE"
+    },
+    "Template": {
+        "prefix": "temp",
+        "body": [
+            "/* ============================================================================ */",
+            "/* ************************* Begin of ${1:Main Code}       ************************* */",
+            "/* ---------------------------------------------------------------------------- */",
+            "$2",
+            "/* ---------------------------------------------------------------------------- */",
+            "/* ************************* End of ${1:Main Code}         ************************* */",
+            "/* ============================================================================ */",
+            "$0"
+        ]
+    },
+    "Subtemplate": {
+        "prefix": "subtem",
+        "body": [
+            "/* ************************* Begin of ${1:wire} ************************* */",
+            "$0",
+            "/* ************************* End of ${1:wire}   ************************* */"
+        ]
+    },
+    "always": {
+        "prefix": "alw",
+        "body": [
+            "always @(posedge i_clk, posedge i_rst)",
+            "begin",
+            "    $1",
+            "end$0"
+        ],
+        "description": "always"
+    },
+    "alwaysif": {
+        "prefix": "alif",
+        "body": [
+            "always @(posedge ${1:i_clk}, ${2:posedge} ${3:i_rst})",
+            "begin",
+            "    if (${3:i_rst})",
+            "    begin",
+            "        $4",
+            "    end",
+            "    else",
+            "    begin",
+            "        $5",
+            "    end",
+            "end$0"
+        ],
+        "description": "always if 2"
+    },
+    "alwaysif3": {
+        "prefix": "alif3",
+        "body": [
+            "always @(posedge ${1:i_clk}, ${2:posedge} ${3:i_rst})",
+            "begin",
+            "    if (${3:i_rst})",
+            "    begin",
+            "        $4",
+            "    end",
+            "    else if (${5:condition})",
+            "    begin",
+            "        $6",
+            "    end",
+            "    else",
+            "    begin",
+            "        $7",
+            "    end",
+            "end$0"
+        ],
+        "description": "always if 3"
+    },
+    "alwaysif4": {
+        "prefix": "alif4",
+        "body": [
+            "always @(posedge ${1:i_clk}, ${2:posedge} ${3:i_rst})",
+            "begin",
+            "    if (${3:i_rst})",
+            "    begin",
+            "        $4",
+            "    end",
+            "    else if (${5:condition})",
+            "    begin",
+            "        $6",
+            "    end",
+            "    else if (${7:condition})",
+            "    begin",
+            "        $8",
+            "    end",
+            "    else",
+            "    begin",
+            "        $9",
+            "    end",
+            "end$0"
+        ],
+        "description": "always if 3"
+    },
+    "alwaysif5": {
+        "prefix": "alif5",
+        "body": [
+            "always @(posedge ${1:i_clk}, ${2:posedge} ${3:i_rst})",
+            "begin",
+            "    if (${3:i_rst})",
+            "    begin",
+            "        $4",
+            "    end",
+            "    else if (${5:condition})",
+            "    begin",
+            "        $6",
+            "    end",
+            "    else if (${7:condition})",
+            "    begin",
+            "        $8",
+            "    end",
+            "    else if (${9:condition})",
+            "    begin",
+            "        $10",
+            "    end",
+            "    else",
+            "    begin",
+            "        $11",
+            "    end",
+            "end$0"
+        ],
+        "description": "always if 5"
+    },
+    "assignif": {
+        "prefix": "asif",
+        "body": [
+            "assign ${1:w_wire} = (${2:l_value} > ${3:r_value}) ? ${4:1'b1} : ${5:1'b0};$0"
+        ]
+    },
+    "ifoneline": {
+        "prefix": "ifol",
+        "body": [
+            "(${1:condition}) ? ${2:valTrue} : ${3:valFalse};$0"
+        ]
+    },
+    "if2oneline": {
+        "prefix": "if2ol",
+        "body": [
+            "(${1:condition}) ?",
+            "(${2:condition}) ? ${3:val12True} : ${4:val1True}",
+            "                                  : ${5:val1False};$0"
+        ]
+    },
+    "ifelse": {
+        "prefix": "ifelse",
+        "body": [
+            "if (${1:condition})",
+            "begin",
+            "    $2",
+            "end",
+            "else",
+            "begin",
+            "    $3",
+            "end"
+        ]
+    },
+    "ifelse3": {
+        "prefix": "ifelse3",
+        "body": [
+            "if (${1:condition})",
+            "begin",
+            "    $2",
+            "end",
+            "else if (${3:condition})",
+            "begin",
+            "    $4",
+            "end",
+            "else",
+            "begin",
+            "    $5",
+            "end$0"
+        ]
+    },
+    "ifelse4": {
+        "prefix": "ifelse4",
+        "body": [
+            "if (${1:condition})",
+            "begin",
+            "    $2",
+            "end",
+            "else if (${3:condition})",
+            "begin",
+            "    $4",
+            "end",
+            "else if (${5:condition})",
+            "begin",
+            "    $6",
+            "end",
+            "else",
+            "begin",
+            "    $7",
+            "end$0"
+        ]
+    },
+    "ifelse5": {
+        "prefix": "ifelse5",
+        "body": [
+            "if (${1:condition})",
+            "begin",
+            "    $2",
+            "end",
+            "else if (${3:condition})",
+            "begin",
+            "    $4",
+            "end",
+            "else if (${5:condition})",
+            "begin",
+            "    $6",
+            "end",
+            "else if (${7:condition})",
+            "begin",
+            "    $8",
+            "end",
+            "else",
+            "begin",
+            "    $9",
+            "end$0"
+        ]
+    },
+    "mark_debug": {
+        "prefix": "md",
+        "body": [
+            "(* MARK_DEBUG = \"TRUE\" *) $0",
+        ]
+    },
+}
