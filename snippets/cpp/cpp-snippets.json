@@ -3,9 +3,10 @@
         "prefix": "codeblock0",
         "body": [
 
-            "//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......",
-            "$1",
-            "//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......",
+            "/*....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....*/",
+            "/* ${1:Comment} */",
+            "$2",
+            "/*....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....*/",
             "$0"
         ],
         "description": "Code Block"
