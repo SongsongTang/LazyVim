@@ -23,5 +23,10 @@ local diagnostic_goto = function(next, severity)
     end
 end
 
+-- Mapping for Errors
 map("n", "ge", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
 map("n", "gE", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
+
+-- Mapping for Warnings
+map("n", "gw", diagnostic_goto(true, "WARNING"), { desc = "Next Warning" })
+map("n", "gW", diagnostic_goto(false, "WARNING"), { desc = "Prev Warning" })
