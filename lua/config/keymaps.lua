@@ -22,6 +22,10 @@ map("n", "gE", diagnostic_goto(false, "ERROR"), { desc = "Prev Error" })
 map("n", "gw", diagnostic_goto(true, "WARNING"), { desc = "Next Warning" })
 map("n", "gW", diagnostic_goto(false, "WARNING"), { desc = "Prev Warning" })
 
+-- Mapping for Hints
+map("n", "gq", diagnostic_goto(true, "HINT"), { desc = "Next Hint" })
+map("n", "gQ", diagnostic_goto(false, "HINT"), { desc = "Prev Hint" })
+
 map("n", "qq", function()
     Snacks.bufdelete()
 end, { desc = "Delete Buffer" })
