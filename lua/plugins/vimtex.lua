@@ -17,7 +17,7 @@ return {
         vim.g.vimtex_view_general_options = "-reuse-instance -forward-search @tex @line @pdf"
 
         vim.g.vimtex_compiler_latexmk = {
-            aux_dir = "./aux",
+            aux_dir = "./out",
             out_dir = "./out",
             options = {
                 "-shell-escape",
