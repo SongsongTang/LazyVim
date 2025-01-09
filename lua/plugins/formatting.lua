@@ -14,10 +14,9 @@ return {
                 verible = {
                     command = "verible-verilog-format", -- Verible 的命令
                     args = {
-                        "--column_limit=120",
+                        "--column_limit=100",
                         "--indentation_spaces=4",
-                        "--line_break_penalty=4",
-                        "--over_column_limit_penalty=120",
+                        "--wrap_spaces=4",
                         "--assignment_statement_alignment=align",
                         "--case_items_alignment=align",
                         "--class_member_variable_alignment=align",
@@ -28,10 +27,9 @@ return {
                         "--named_parameter_alignment=align",
                         "--named_port_alignment=align",
                         "--port_declarations_alignment=align",
-                        "--port_declarations_right_align_packed_dimensions=true",
-                        "--port_declarations_right_align_unpacked_dimensions=true",
                         "--struct_union_members_alignment=align",
-                        -- 添加其他所需的参数
+                        "--try_wrap_long_lines=true",
+                        "--wrap_end_else_clauses=true",
                         "-",
                     },
                     stdin = true,
