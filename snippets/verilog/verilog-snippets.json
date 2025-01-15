@@ -246,7 +246,7 @@
     "mark_debug": {
         "prefix": "md",
         "body": [
-            "(* MARK_DEBUG = \"TRUE\" *) $0",
+            "(* MARK_DEBUG = \"TRUE\" *) $0"
         ]
-    },
+    }
 }

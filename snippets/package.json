@@ -10,7 +10,8 @@
             },
             {
                 "language": [
-                    "verilog"
+                    "verilog",
+                    "systemverilog"
                 ],
                 "path": "./verilog/verilog-snippets.json"
             },
