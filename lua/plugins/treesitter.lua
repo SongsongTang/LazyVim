@@ -2,7 +2,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         opts = function(_, opts)
-            opts.ensure_installed = { "cpp", "verilog" }
+            opts.ensure_installed = { "cpp", "verilog", "json5" }
 
             opts.highlight = opts.highlight or {}
             if type(opts.ensure_installed) == "table" then
