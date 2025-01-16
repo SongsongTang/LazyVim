@@ -5,6 +5,7 @@
 -- DO NOT USE `LazyVim.safe_keymap_set` IN YOUR OWN CONFIG!!
 -- use `vim.keymap.set` instead
 local map = vim.keymap.set
+
 -- -- diagnostic
 local diagnostic_goto = function(next, severity)
     local go = next and vim.diagnostic.goto_next or vim.diagnostic.goto_prev
@@ -29,3 +30,11 @@ map("n", "gQ", diagnostic_goto(false, "HINT"), { desc = "Prev Hint" })
 map("n", "qq", function()
     Snacks.bufdelete()
 end, { desc = "Delete Buffer" })
+
+-- Mapping Github Copilot
+map("i", "<C-j>", 'copilot#Accept("\\<CR>")', {
+    expr = true,
+    replace_keycodes = false,
+})
+vim.g.copilot_no_tab_map = true
+map("i", "<C-l>", "<Plug>(copilot-accept-word)")
