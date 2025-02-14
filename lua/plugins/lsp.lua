@@ -3,7 +3,9 @@ return {
         -- Ensure C/C++ debugger is installed
         "williamboman/mason.nvim",
         optional = true,
-        opts = { ensure_installed = { "cmake-language-server", "clangd", "codelldb", "texlab", "verible" } },
+        opts = {
+            ensure_installed = { "cmake-language-server", "clangd", "codelldb", "texlab", "verible", "pyright", "ruff" },
+        },
     },
     {
         "neovim/nvim-lspconfig",
@@ -59,6 +61,21 @@ return {
                         usePlaceholders = true,
                         completeUnimported = true,
                         clangdFileStatus = true,
+                    },
+                },
+                ruff = {
+                    cmd_env = { RUFF_TRACE = "messages" },
+                    init_options = {
+                        settings = {
+                            logLevel = "error",
+                        },
+                    },
+                    keys = {
+                        {
+                            "<leader>co",
+                            LazyVim.lsp.action["source.organizeImports"],
+                            desc = "Organize Imports",
+                        },
                     },
                 },
             },
