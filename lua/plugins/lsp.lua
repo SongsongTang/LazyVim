@@ -4,7 +4,16 @@ return {
         "williamboman/mason.nvim",
         optional = true,
         opts = {
-            ensure_installed = { "cmake-language-server", "clangd", "codelldb", "texlab", "verible", "pyright", "ruff" },
+            ensure_installed = {
+                "cmake-language-server",
+                "clangd",
+                "codelldb",
+                "texlab",
+                "verible",
+                "pyright",
+                "ruff",
+                "lua-language-server",
+            },
         },
     },
     {
