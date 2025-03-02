@@ -2,11 +2,13 @@ return {
     -- disable nvim-cmp
     {
         "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
         optional = true,
         enabled = false,
     },
     {
         "saghen/blink.cmp",
+        event = "InsertEnter",
         opts = {
             completion = {
                 list = {

@@ -1,6 +1,7 @@
 return {
     {
         "stevearc/conform.nvim",
+        event = "InsertEnter",
         optional = true,
         opts = {
             formatters_by_ft = {

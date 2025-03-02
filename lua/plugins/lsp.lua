@@ -2,6 +2,7 @@ return {
     {
         -- Ensure C/C++ debugger is installed
         "williamboman/mason.nvim",
+        event = "InsertEnter",
         optional = true,
         opts = {
             ensure_installed = {
@@ -12,6 +13,7 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
+        event = "InsertEnter",
         opts = {
             -- make sure mason installs the server
             servers = {},

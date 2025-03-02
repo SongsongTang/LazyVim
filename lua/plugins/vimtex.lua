@@ -1,6 +1,7 @@
 return {
     "lervag/vimtex",
-    lazy = false, -- lazy-loading will disable inverse search
+    -- lazy = false, -- lazy-loading will disable inverse search
+    ft = "latex",
     config = function()
         vim.g.vimtex_view_general_viewer = "SumatraPDF"
         --" Simpler alternatives for following option:
