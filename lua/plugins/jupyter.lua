@@ -127,6 +127,7 @@ return {
                     vim.keymap.set("n", "<leader>jrc", r.run_cell, { desc = "Run cell", silent = true })
                     vim.keymap.set("n", "<leader>jra", r.run_above, { desc = "Run cell and above", silent = true })
                     vim.keymap.set("n", "<leader>jrb", r.run_below, { desc = "Run cell and below", silent = true })
+                    vim.keymap.set("n", "<leader>jri", "MoltenInterrupt<CR>", { desc = "Run interrupt", silent = true })
                     vim.keymap.set("n", "<leader>jrl", r.run_line, { desc = "Run line", silent = true })
                     vim.keymap.set("n", "<leader>jrA", r.run_all, { desc = "Run all cells", silent = true })
                     vim.keymap.set("n", "<leader>jRA", function()
