@@ -34,9 +34,9 @@ return {
                 keymap = {
                     hover = "H",
                     definition = "gd",
-                    rename = "<leader>rn",
+                    rename = "<localleader>rn",
                     references = "gr",
-                    format = "<leader>gf",
+                    format = "<localleader>gf",
                 },
                 codeRunner = {
                     enabled = true,
@@ -79,7 +79,7 @@ return {
 
             -- vim.g.molten_cover_empty_lines = true
             -- vim.g.molten_comment_string = "# %%"
-            vim.keymap.set({ "v", "n" }, "<leader><leader>R", "<Cmd>MoltenEvaluateVisual<CR>")
+            vim.keymap.set({ "v", "n" }, "<localleader><localleader>R", "<Cmd>MoltenEvaluateVisual<CR>")
 
             -- vim.g.molten_auto_image_popup = true
             -- vim.g.molten_show_mimetype_debug = true
@@ -127,12 +127,12 @@ return {
                 callback = function()
                     -- quarto code runner mappings
                     local r = require("quarto.runner")
-                    vim.keymap.set("n", "<leader>rc", r.run_cell, { desc = "run cell", silent = true })
-                    vim.keymap.set("n", "<leader>ra", r.run_above, { desc = "run cell and above", silent = true })
-                    vim.keymap.set("n", "<leader>rb", r.run_below, { desc = "run cell and below", silent = true })
-                    vim.keymap.set("n", "<leader>rl", r.run_line, { desc = "run line", silent = true })
-                    vim.keymap.set("n", "<leader>rA", r.run_all, { desc = "run all cells", silent = true })
-                    vim.keymap.set("n", "<leader>RA", function()
+                    vim.keymap.set("n", "<leader>jrc", r.run_cell, { desc = "Run cell", silent = true })
+                    vim.keymap.set("n", "<leader>jra", r.run_above, { desc = "Run cell and above", silent = true })
+                    vim.keymap.set("n", "<leader>jrb", r.run_below, { desc = "Run cell and below", silent = true })
+                    vim.keymap.set("n", "<leader>jrl", r.run_line, { desc = "Run line", silent = true })
+                    vim.keymap.set("n", "<leader>jrA", r.run_all, { desc = "Run all cells", silent = true })
+                    vim.keymap.set("n", "<leader>jRA", function()
                         r.run_all(true)
                     end, { desc = "run all cells of all languages", silent = true })
 
