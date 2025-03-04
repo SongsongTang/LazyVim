@@ -81,25 +81,22 @@ return {
             -- vim.g.molten_comment_string = "# %%"
             vim.keymap.set({ "v", "n" }, "<localleader><localleader>R", "<Cmd>MoltenEvaluateVisual<CR>")
 
-            -- vim.g.molten_auto_image_popup = true
             -- vim.g.molten_show_mimetype_debug = true
             vim.g.molten_auto_open_output = false
             vim.g.molten_image_location = "float"
             vim.g.molten_image_provider = "wezterm"
-            -- vim.g.molten_output_show_more = true
+            vim.g.molten_output_show_more = true
             vim.g.molten_output_win_border = { "", "━", "", "" }
-            vim.g.molten_output_win_max_height = 12
-            -- vim.g.molten_output_virt_lines = true
+            vim.g.molten_output_virt_lines = true
+            vim.g.molten_output_win_max_height = 50
             vim.g.molten_virt_text_output = true
             vim.g.molten_use_border_highlights = true
             vim.g.molten_virt_lines_off_by_1 = true
             vim.g.molten_wrap_output = true
             vim.g.molten_tick_rate = 142
-            vim.g.molten_output_show_more = true
-            vim.g.molten_output_virt_lines = true
             vim.g.molten_split_direction = "right" --direction of the output window, options are "right", "left", "top", "bottom"
             vim.g.molten_split_size = 40 --(0-100) % size of the screen dedicated to the output window
-            vim.g.molten_auto_image_popup = false
+            vim.g.molten_auto_image_popup = true
 
             vim.keymap.set("n", "<leader>j", "", { desc = "Jupyter Notebook", silent = true, noremap = true })
             vim.keymap.set("n", "<leader>ja", function()
@@ -137,6 +134,12 @@ return {
                     end, { desc = "run all cells of all languages", silent = true })
 
                     -- setup some molten specific keybindings
+                    vim.keymap.set(
+                        "n",
+                        "<leader>jms",
+                        ":MoltenShowOutput<CR>",
+                        { desc = "Show Molten Output", silent = true }
+                    )
                     vim.keymap.set(
                         "n",
                         "<localleader>e",
