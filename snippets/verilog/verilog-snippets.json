@@ -37,6 +37,17 @@
             "$0"
         ]
     },
+    "Template 0": {
+        "prefix": "temp0",
+        "body": [
+            "/*....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....*/",
+            "/* ${1:Comment} */",
+            "$2",
+            "/*....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo....*/",
+            "$0"
+        ],
+        "description": "Code Block"
+    },
     "Subtemplate": {
         "prefix": "subtem",
         "body": [
