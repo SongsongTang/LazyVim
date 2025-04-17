@@ -41,5 +41,5 @@ map("i", "<C-l>", "<Plug>(copilot-accept-word)")
 
 -- gitsigns
 map("n", "<leader>go", ":Gitsigns preview_hunk_inline<CR>", { desc = "Gitsigns preview hunk" })
-map("n", "<leader>gp", ":Gitsigns prev_hunk<CR>", { desc = "Gitsigns previous hunk" })
-map("n", "<leader>gn", ":Gitsigns next_hunk<CR>", { desc = "Gitsigns next hunk" })
+map("n", "<leader>gp", ":Gitsigns prev_hunk<CR> :Gitsigns preview_hunk_inline<CR>", { desc = "Gitsigns previous hunk" })
+map("n", "<leader>gn", ":Gitsigns next_hunk<CR> :Gitsigns preview_hunk_inline<CR>", { desc = "Gitsigns next hunk" })
