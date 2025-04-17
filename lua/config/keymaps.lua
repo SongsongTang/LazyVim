@@ -39,7 +39,19 @@ map("i", "<C-j>", 'copilot#Accept("\\<CR>")', {
 vim.g.copilot_no_tab_map = true
 map("i", "<C-l>", "<Plug>(copilot-accept-word)")
 
--- gitsigns
-map("n", "<leader>go", ":Gitsigns preview_hunk_inline<CR>", { desc = "Gitsigns preview hunk" })
-map("n", "<leader>gp", ":Gitsigns prev_hunk<CR> :Gitsigns preview_hunk_inline<CR>", { desc = "Gitsigns previous hunk" })
-map("n", "<leader>gn", ":Gitsigns next_hunk<CR> :Gitsigns preview_hunk_inline<CR>", { desc = "Gitsigns next hunk" })
+-- safely load gitsigns
+local ok, gs = pcall(require, "gitsigns")
+if ok then
+    -- Preview current hunk
+    map("n", "<leader>go", function()
+        gs.preview_hunk_inline()
+    end, { desc = "Preview current git hunk" })
+
+    map("n", "<leader>gn", function()
+        gs.nav_hunk("next")
+    end, { desc = "Next hunk" })
+
+    map("n", "<leader>gp", function()
+        gs.nav_hunk("prev")
+    end, { desc = "Previous hunk" })
+end
