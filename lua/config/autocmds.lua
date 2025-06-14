@@ -21,3 +21,11 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
         vim.bo.filetype = "systemverilog"
     end,
 })
+
+-- auto remove trailing whitespace on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = { "*.v", "*.sv" },
+    callback = function()
+        vim.cmd([[silent! %s/\s\+$//e]])
+    end,
+})
