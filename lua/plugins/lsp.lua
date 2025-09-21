@@ -1,7 +1,7 @@
 return {
     {
         -- Ensure C/C++ debugger is installed
-        "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
         event = "InsertEnter",
         optional = true,
         opts = {
