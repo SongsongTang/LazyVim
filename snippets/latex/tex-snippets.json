@@ -173,7 +173,7 @@
     "Text Block": {
         "prefix": "textblock",
         "body": [
-            "\\begin{textblock*}{${1}\\paperwidth}[0.5, 0.5](${2:0.5}\\paperwidth, ${3:0.5}\\paperwidth)",
+            "\\begin{textblock*}{${1}\\paperwidth}[0.5, 0.5](${2:0.5}\\paperwidth, ${3:0.5}\\paperheight)",
             "${4}",
             "\\end{textblock*}",
             "${0}"
