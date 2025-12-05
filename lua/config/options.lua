@@ -12,3 +12,5 @@ vim.opt.cursorcolumn = true -- Highlight the screen column of the cursor with Cu
 if vim.loop.os_uname().sysname == "Windows_NT" then
     vim.o.shell = "powershell"
 end
+
+vim.opt.colorcolumn = "80"
