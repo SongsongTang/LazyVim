@@ -32,9 +32,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 local overlength_group = vim.api.nvim_create_augroup("OverLengthHighlight", { clear = true })
 
--- 1) 定义 OverLength 高亮组的颜色
+-- 1) Define OverLength highlight color
 local function set_overlength_hl()
-    -- 这里改成你喜欢的浅蓝色
     vim.api.nvim_set_hl(0, "OverLength", {
         link = "ColorColumn",
         -- bg = "#3c3836",
@@ -42,10 +41,10 @@ local function set_overlength_hl()
     })
 end
 
--- 注意：autocmds.lua 在 VeryLazy 加载，所以这里要直接调用一次
+-- Note: autocmds.lua is loaded on the VeryLazy event, so we must call this once immediately.
 set_overlength_hl()
 
--- 换 colorscheme 时再重新设置一次，防止被主题覆盖掉
+-- Re-apply highlight settings after colorscheme changes to prevent them from being overwritten.
 vim.api.nvim_create_autocmd("ColorScheme", {
     group = overlength_group,
     callback = function()
@@ -53,11 +52,15 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     end,
 })
 
--- 2) 为每个窗口加上“>120 列变色”的 match
+-- Apply “>120 columns highlight” match for each window.
 vim.api.nvim_create_autocmd({ "BufWinEnter", "WinEnter" }, {
     group = overlength_group,
     callback = function()
-        -- 从第 121 列开始到行尾：\%121v.\+
+        -- Match from column 121 to the end of the line: \%121v.\+
         vim.cmd([[match OverLength /\%121v.\+/]])
     end,
 })
+
+-- Force * and # searches to be case-sensitive.
+vim.keymap.set("n", "*", [[/\C\<\<<c-r><c-w>\>\><cr>]], { silent = true })
+vim.keymap.set("n", "#", [[?\C\<\<<c-r><c-w>\>\><cr>]], { silent = true })
