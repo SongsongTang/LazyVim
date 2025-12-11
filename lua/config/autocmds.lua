@@ -36,7 +36,9 @@ local overlength_group = vim.api.nvim_create_augroup("OverLengthHighlight", { cl
 local function set_overlength_hl()
     -- 这里改成你喜欢的浅蓝色
     vim.api.nvim_set_hl(0, "OverLength", {
-        bg = "#d7dee7",
+        link = "ColorColumn",
+        -- bg = "#3c3836",
+        -- bg = "#ebdbb2",
     })
 end
 
