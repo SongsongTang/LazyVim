@@ -104,11 +104,11 @@ return {
                 vim.cmd("QuartoActivate")
             end, { desc = "Activate Jupyter notebook", silent = true, noremap = true })
 
-            vim.keymap.set("n", "<localleader>mi", ":MoltenInit<CR>", { desc = "Initialize Molten", silent = true })
-            vim.keymap.set("n", "<localleader>ir", function()
+            vim.keymap.set("n", "<leader>jmi", ":MoltenInit<CR>", { desc = "Initialize Molten", silent = true })
+            vim.keymap.set("n", "<leader>jir", function()
                 vim.cmd("MoltenInit rust")
             end, { desc = "Initialize Molten for Rust", silent = true })
-            vim.keymap.set("n", "<localleader>ip", function()
+            vim.keymap.set("n", "<leader>jip", function()
                 local venv = os.getenv("VIRTUAL_ENV")
                 if venv ~= nil then
                     -- in the form of /home/benlubas/.virtualenvs/VENV_NAME
@@ -124,52 +124,39 @@ return {
                 callback = function()
                     -- quarto code runner mappings
                     local r = require("quarto.runner")
-                    vim.keymap.set("n", "<leader>jrc", r.run_cell, { desc = "Run cell", silent = true })
-                    vim.keymap.set("n", "<leader>jra", r.run_above, { desc = "Run cell and above", silent = true })
-                    vim.keymap.set("n", "<leader>jrb", r.run_below, { desc = "Run cell and below", silent = true })
-                    vim.keymap.set("n", "<leader>jri", "MoltenInterrupt<CR>", { desc = "Run interrupt", silent = true })
-                    vim.keymap.set("n", "<leader>jrl", r.run_line, { desc = "Run line", silent = true })
-                    vim.keymap.set("n", "<leader>jrA", r.run_all, { desc = "Run all cells", silent = true })
-                    vim.keymap.set("n", "<leader>jRA", function()
+                    vim.keymap.set("n", "<localleader>rc", r.run_cell, { desc = "Run cell", silent = true })
+                    vim.keymap.set("n", "<localleader>ra", r.run_above, { desc = "Run cell and above", silent = true })
+                    vim.keymap.set("n", "<localleader>rb", r.run_below, { desc = "Run cell and below", silent = true })
+                    vim.keymap.set(
+                        "n",
+                        "<localleader>ri",
+                        "MoltenInterrupt<CR>",
+                        { desc = "Run interrupt", silent = true }
+                    )
+                    vim.keymap.set("n", "<localleader>rl", r.run_line, { desc = "Run line", silent = true })
+                    vim.keymap.set("n", "<localleader>rA", r.run_all, { desc = "Run all cells", silent = true })
+                    vim.keymap.set("n", "<localleader>RA", function()
                         r.run_all(true)
                     end, { desc = "run all cells of all languages", silent = true })
 
                     -- setup some molten specific keybindings
                     vim.keymap.set(
                         "n",
-                        "<leader>jms",
-                        ":MoltenShowOutput<CR>",
-                        { desc = "Show Molten Output", silent = true }
-                    )
-                    vim.keymap.set(
-                        "n",
-                        "<localleader>e",
-                        ":MoltenEvaluateOperator<CR>",
-                        { desc = "evaluate operator", silent = true }
-                    )
-                    vim.keymap.set(
-                        "n",
-                        "<localleader>rr",
+                        "<localleader>mrc",
                         ":MoltenReevaluateCell<CR>",
                         { desc = "re-eval cell", silent = true }
                     )
                     vim.keymap.set(
                         "v",
-                        "<localleader>r",
+                        "<localleader>mev",
                         ":<C-u>MoltenEvaluateVisual<CR>gv",
                         { desc = "execute visual selection", silent = true }
                     )
                     vim.keymap.set(
                         "n",
-                        "<localleader>os",
+                        "<localleader>mo",
                         ":noautocmd MoltenEnterOutput<CR>",
                         { desc = "open output window", silent = true }
-                    )
-                    vim.keymap.set(
-                        "n",
-                        "<localleader>oh",
-                        ":MoltenHideOutput<CR>",
-                        { desc = "close output window", silent = true }
                     )
                     vim.keymap.set(
                         "n",
@@ -180,7 +167,7 @@ return {
                     -- 单行执行（REPL 风格）
                     vim.keymap.set(
                         "n",
-                        "<localleader>rl",
+                        "<localleader>mrl",
                         ":MoltenEvaluateLine<CR>",
                         { desc = "Molten: Evaluate current line", silent = true }
                     )
