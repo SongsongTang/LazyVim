@@ -177,6 +177,13 @@ return {
                         ":MoltenDelete<CR>",
                         { desc = "delete Molten cell", silent = true }
                     )
+                    -- 单行执行（REPL 风格）
+                    vim.keymap.set(
+                        "n",
+                        "<localleader>rl",
+                        ":MoltenEvaluateLine<CR>",
+                        { desc = "Molten: Evaluate current line", silent = true }
+                    )
                     local open = false
                     vim.keymap.set("n", "<localleader>ot", function()
                         open = not open
