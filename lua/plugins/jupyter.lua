@@ -142,7 +142,7 @@ return {
                     -- setup some molten specific keybindings
                     vim.keymap.set(
                         "n",
-                        "<localleader>mrc",
+                        "<localleader>mc",
                         ":MoltenReevaluateCell<CR>",
                         { desc = "re-eval cell", silent = true }
                     )
@@ -167,7 +167,7 @@ return {
                     -- 单行执行（REPL 风格）
                     vim.keymap.set(
                         "n",
-                        "<localleader>mrl",
+                        "<localleader>mr",
                         ":MoltenEvaluateLine<CR>",
                         { desc = "Molten: Evaluate current line", silent = true }
                     )
