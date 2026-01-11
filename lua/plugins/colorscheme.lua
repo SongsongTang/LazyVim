@@ -8,7 +8,7 @@ return {
             contrast = "medium",
         },
         init = function()
-            vim.o.background = "light"
+            vim.o.background = "dark"
         end,
     },
 
